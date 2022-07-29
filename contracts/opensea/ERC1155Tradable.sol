@@ -9,12 +9,7 @@ import "../openzeppelin-v4.7.0/utils/Strings.sol";
 
 import "./common/meta-transactions/ContentMixin.sol";
 import "./common/meta-transactions/NativeMetaTransaction.sol";
-
-contract OwnableDelegateProxy { }
-
-contract ProxyRegistry {
-  mapping(address => OwnableDelegateProxy) public proxies;
-}
+import "./ProxyRegistry.sol";
 
 /**
  * @title ERC1155Tradable
