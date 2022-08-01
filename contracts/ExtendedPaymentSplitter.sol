@@ -8,7 +8,7 @@ contract ExtendedPaymentSplitter is ModifiedPaymentSplitter {
     event PaymentNotDue(address to);
     event ERC20PaymentNotDue(IERC20 indexed token, address to);
 
-    constructor(address[] memory payees, uint256[] memory shares_) payable 
+    constructor(address[] memory payees, uint256[] memory shares_) payable
         ModifiedPaymentSplitter(payees, shares_) { }
 
     function releaseForPayees() public {

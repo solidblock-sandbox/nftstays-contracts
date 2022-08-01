@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NFT Stays</title>
+    <link rel="stylesheet" href="css/spectre.min.css">
+    <link rel="stylesheet" href="css/spectre-exp.min.css">
+    <link rel="stylesheet" href="css/spectre-icons.min.css">
+  </head>
+
+  <body>
+    <div class="container mt-2">
+        <div class="columns">
+            <div class="column col-8 col-mx-auto">
+            <div class="empty">
+                <div class="empty-icon">
+                    <i class="icon icon-search"></i>
+                </div>
+                <p class="empty-subtitle">Refer to the <b>Developer Console</b> to view events</p>
+                <div class="empty-action">
+                    <div class="container">
+                        <button class="my-2 p-centered btn btn-primary" id="connect">Connect MetaMask</button>
+                        <button class="my-2 p-centered btn btn-primary" id="switch">Switch to Polygon Network</button>
+                        <div class="my-2 input-group">
+                            <input type="text" class="form-input" id="splitter-addresses" placeholder="Addresses">
+                            <input type="text" class="form-input" id="splitter-shares" placeholder="Shares">
+                            <button class="btn btn-primary input-group-btn" id="deploy">Deploy</button>
+                        </div>
+                        <div class="my-2 input-group">
+                            <input type="text" class="form-input" id="state-erc20-address" placeholder="ERC20 address">
+                            <button class="btn btn-success input-group-btn" id="erc20-mint">Mint</button>
+                            <button class="btn btn-primary input-group-btn" id="get-erc20-state">Get ERC20 State</button>
+                        </div>
+                        <div class="my-2 input-group">
+                            <input type="text" class="form-input" id="transfer-erc20-address" placeholder="ERC20 address">
+                            <input type="text" class="form-input" id="transfer-erc20-receiver" placeholder="Receiver">
+                            <button class="btn btn-primary input-group-btn" id="transfer-erc20">Transfer All</button>
+                        </div>
+                        <div class="my-2 input-group">
+                            <input type="text" class="form-input" id="splitter-split-contract" placeholder="Splitter address">
+                            <input type="text" class="form-input" id="splitter-split-tokens" placeholder="ERC20 addresses">
+                            <button class="btn btn-primary input-group-btn" id="splitter-split">Split</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+
+  <script src="lib/ethers-5.2.umd.min.js"></script>
+  <script src="abi/ContractFactory.abi.js"></script>
+  <script src="abi/ExtendedPaymentSplitter.abi.js"></script>
+  <script src="abi/ERC20.abi.js"></script>
+  <script src="index.js"></script>
+</html>
