@@ -16,15 +16,14 @@ contract CouponBox is ERC1155Tradable {
     event AllowedForOperator(address);
 
     Coupon public coupon;
-    constructor(address _proxyRegistryAddress)
+    constructor(address _proxyRegistryAddress, Coupon couponAddress)
         ERC1155Tradable(
             "CouponBox",
             "CPNBOX",
             "https://creatures-api.opensea.io/api/accessory/{id}",
             _proxyRegistryAddress
         ) {
-            coupon = new Coupon(_proxyRegistryAddress);
-            coupon.transferOwnership(msgSender());
+            coupon = couponAddress;
         }
 
     function contractURI() public pure returns (string memory) {

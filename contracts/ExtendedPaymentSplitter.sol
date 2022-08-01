@@ -32,4 +32,21 @@ contract ExtendedPaymentSplitter is ModifiedPaymentSplitter {
         }
         require (failed < _payees.length, "ExtendedPaymentSplitter: none of accounts are due payment");
     }
+
+    function releaseForPayees(IERC20[] calldata tokens) public {
+        uint256 successToken = 0;
+        for (uint256 i = 0; i < tokens.length; i++) {
+            uint256 failed = 0;
+            for (uint256 j = 0; j < _payees.length; j++) {
+                if (!_release(tokens[i], _payees[j])) {
+                    failed++;
+                    emit ERC20PaymentNotDue(tokens[i], _payees[j]);
+                }
+            }
+            if(failed < _payees.length) {
+                successToken++;
+            }
+        }
+        require (successToken > 0, "ExtendedPaymentSplitter: none of accounts are due payment");
+    }
 }
